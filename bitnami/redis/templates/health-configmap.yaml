@@ -17,7 +17,7 @@ data:
     [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
     [[ -n "$REDIS_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_PASSWORD"
     response=$(
-      timeout -s 4 $1 \
+      timeout -s 5 $1 \
       redis-cli \
         -h localhost \
 {{- if .Values.tls.enabled }}
